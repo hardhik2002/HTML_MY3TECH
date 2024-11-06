@@ -1,0 +1,66 @@
+.ribbon-box {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    height: 180px;
+    text-align: justify;
+    
+}
+
+.ribbon {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+}
+
+.ribbon-top-left {
+    top: -10px;
+    left: -10px;
+}
+
+.ribbon-top-right {
+    top: -10px;
+    right: -10px;
+    transform: rotate(100deg);
+}
+
+.ribbon span {
+    position: absolute;
+    display: block;
+    width: 160px;
+    padding: 5px 0;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    
+    transform: rotate(-45deg);
+}
+
+/* Adjusting span position for ribbons */
+.ribbon-top-left span {
+    top: 25px;
+    left: -45px;
+}
+
+.ribbon-top-right span {
+    top: 25px;
+    right: -45px;
+}
+
+.ribbon-orange span {
+    background-color: #f0ad4e;
+}
+
+.ribbon-red span {
+    background-color: #d9534f;
+}
+
+hr{
+    border:1px solid black;
+}

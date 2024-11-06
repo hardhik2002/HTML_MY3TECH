@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #7D5BA6;
+    padding: 20px 0;
+    text-align: center;
+    color: black;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    background-color: #f5f5f5;
+    padding: 10px 0;
+}
+
+nav ul li {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+nav ul li img {
+    width: 50px;
+    height: auto;
+}
+
+.main {
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.shopping-time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shopping-time img {
+    width: 800px;
+    height: auto;
+}
+
+.shopping-time h2 {
+    font-size: 2em;
+    margin: 20px 0 10px 0;
+}
+
+.shopping-time p {
+    font-size: 1.2em;
+    color: #888;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>FASHION STORE</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a><img src="tshirt.jpeg" alt="T-Shirts"></a><br>T-Shirts</li>
+                <li><img src="sunglasses.jpeg" alt="Sun Glasses"><br>Sun Glasses</li>
+                <li><a href="shirts.html"><img src="shirts.jpeg" alt="Shirts"></a><br>Shirts</li>
+                <li><img src="shoes.jpeg" alt="Shoes"><br>Shoes</li>
+                <li><a href="pants.html"><img src="pants.jpeg" alt="Pants"></a><br>Pants</li>
+                <li><img src="perfume.jpeg" alt="Perfumes"><br>Perfumes</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main">
+        <div class="shopping-time">
+            <img src="shopingtime.jpeg" alt="Shopping Cart">
+            <div class="text">
+                <h2>SHOPPING TIME</h2>
+                <p>Vector Illustration</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

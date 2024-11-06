@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <title>table_demo2</title>
+        <style>
+            
+            .outer_table{
+                margin: 20px auto;
+                border: 2px solid black;
+                width:50%;
+                border-collapse: collapse;
+                font-size: 30px;
+                               
+            }
+            td,th{
+                border: 5px solid rgb(17, 44, 193);
+                border-collapse: collapse;
+                background-color: blanchedalmond;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <table class="outer_table">
+            <thead>
+                <tr>
+                    <th>SI.NO</th>
+                    <th>Name of the topic</th>
+                    <th>Time</th>
+                    <th>Day</th>
+                    <th>Assignments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="5">1</td>
+                    <td>Web Development Overview</td>
+                    <td rowspan="5">1:30</td>
+                    <td rowspan="5">wedbesday</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</HTML>

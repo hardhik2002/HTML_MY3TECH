@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>table task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(48, 48, 47);
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 2px solid black;
+            margin-top: 300px;
+            background-color: white;
+        }
+        th, td {
+            padding: 8px 10px;
+            text-align: left;
+            
+        }
+        
+        .center {
+            text-align: center;
+        }
+        .right{
+            text-align: right;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        
+        .spacer-row td {
+            border-bottom: 2px solid black; 
+            padding: 0;
+        }
+        
+        #netpay{
+            text-align: center;
+            justify-content: center;
+        }
+        .table1 td{
+            border: none;
+        }
+        .border-right {
+            border-right: 2px solid black;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="4" class="center bold">My3tech</td>
+        </tr>
+        <tr class="spacer-row">
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td colspan="4" class="center bold underline">Salary Slip for Sep 2024</td>
+        </tr>
+        <tr class="spacer-row">
+            <td colspan="4"></td>
+        </tr>
+        <div class="table1">
+        <tr>
+            <td >Name</td>
+            <td>Hardhik</td>
+            <td >Department</td>
+            <td>Devoloping</td>
+        </tr>
+        <tr>
+            <td >Emp. No</td>
+            <td >22</td>
+            <td >Bank Name</td>
+            <td>HDFC</td>
+        </tr>
+        <tr>
+            <td >Designation</td>
+            <td>Manager</td>
+            <td >A/c No.</td>
+            <td>12345</td>
+        </tr>
+        </div>
+
+        <tr class="spacer-row">
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <th colspan="2" class="center">Earnings</th>
+            <th colspan="2" class="center">Deductions</th>
+        </tr>
+        <tr class="spacer-row">
+            <td colspan="4"></td>
+        </tr>
+        <div class="table-2">
+        <tr>
+            <td>Basic Salary</td>
+            <td class="border-right">25200</td>
+            <td>EPF</td>
+            <td>1800</td>
+        </tr>
+        <tr>
+            <td>House Rent Allowances</td>
+            <td class="border-right">9408</td>
+            <td>Health Insurance</td>
+            <td>500</td>
+        </tr>
+        <tr>
+            <td>Conveyance Allowances</td>
+            <td class="border-right">1493</td>
+            <td>Professional Tax</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>Medical Allowances</td>
+            <td class="border-right">1167</td>
+            <td>TDS</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Special Allowances</td>
+            <td class="border-right">18732</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="bold">Gross Salary</td>
+            <td class="bold border-right">56000</td>
+            <td class="bold">Total Deductions</td>
+            <td class="bold">2500</td>
+        </tr>
+        </div>
+        <tr class="spacer-row">
+            <td colspan="4"></td>
+        </tr>
+        
+        <tr id="netpay">
+            <td class="bold">Net Pay</td>
+            
+            <td colspan="3">53500</td>
+        </tr>
+        <tr class="spacer-row">
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td colspan="4" class="right">Amount in Words: Fifty Three Thousand Five Hundred</td>
+        </tr>
+    </table>
+
+</body>
+</html>
