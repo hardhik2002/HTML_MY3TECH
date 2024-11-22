@@ -1,0 +1,320 @@
+<html>
+  <head>
+    <title>Employee Information Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Link to FontAwesome for the dot icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Rubik", sans-serif;
+        background-color: white;
+        color: black;
+      }
+      hr {
+        border: 1px solid #1c0356;
+      }
+      .form-container {
+        max-width: 70%;
+        margin: auto;
+        padding: 20px;
+      }
+      .form-header {
+        font-weight: bold;
+        color: #1c0356;
+        margin-bottom: 20px;
+      }
+      input {
+        border: none;
+        border-bottom: 1.2px solid #1c0356;
+      }
+      input:focus {
+        border: none;
+        border-bottom: 2px solid #1c0356;
+        outline: none;
+        box-shadow: none;
+      }
+      select {
+        border: none;
+        border-bottom: 1px solid black;
+      }
+      .name-input {
+        border: none;
+        border-bottom: 1.2px solid #1c0356;
+      }
+      .name-input:focus {
+        border: none;
+        border-bottom: 2px solid #1c0356;
+        outline: none;
+        box-shadow: none;
+      }
+
+      
+
+      .form-label {
+        width: 150px; /* Adjust this width as needed for alignment */
+        display: inline-block;
+      }
+      .btn-primary {
+        background-color: #1c0356;
+        border-color: #1c0356;
+      }
+      .btn-primary:hover {
+        background-color: #3b057e;
+        border-color: #3b057e;
+      }
+      
+      label,
+      p {
+        font-size: 1rem; /* Adjust size as needed (e.g., 1.2rem, 18px) */
+        /* Optional: increase font weight for better readability */
+        color: #1c0356; /* Optional: apply a consistent color */
+        margin-bottom: 5px; /* Optional: add spacing below each element */
+      }
+      .btn-primary {
+        background-color: #1c0356;
+        border-color: #1c0356;
+      }
+      .btn-primary:hover {
+        background-color: #3b057e;
+        border-color: #3b057e;
+      }
+      
+      .table-bordered th,
+      .table-bordered td {
+        border: 1.5px solid #1c0356;
+        vertical-align: middle;
+        text-align: center;
+        padding: 5px;
+        color: #1c0356;
+      }
+
+      .table-input {
+        border: none;
+        border-bottom: 1.2px solid #1c0356;
+      }
+      .table-input:focus {
+        border-bottom: 2px solid #1c0356;
+      }
+      label,
+      p,
+      h6 {
+        font-size: 1.1rem;
+
+        color: #1c0356;
+        margin-bottom: 5px;
+      }
+      
+      /* Chrome, Safari, Edge, Opera */
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    
+    <form action="#" method="post">
+      <div class="container form-container">
+        <div class="stu-details">
+          <h2 class="form-header text-center">Employee Information Form</h2>
+          <!-- First Row: College Name and Branch -->
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Employee ID:</label>
+              <input
+                type="text"
+                class="name-input"
+                style="width: 70%"
+                name="EMP ID"
+                placeholder="EMP ID"
+                
+              />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Employee Name:</label>
+              <input
+                type="text"
+                class="name-input"
+                style="width: 70%"
+                name="EMP name"
+                placeholder="Employee Name"
+              />
+            </div>
+          </div>
+
+          
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Email:</label>
+              <input
+                type="email"
+                class="name-input"
+                name="Email"
+                style="width: 70%"
+                placeholder="Enter Email"
+              />
+              <br />
+              <span class="error"></span>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone:</label>
+              <input
+                type="text"
+                name="Phone"
+                class="name-input"
+                style="width: 70%"
+                placeholder="+91 XXXXXXXXXX"
+                maxlength="10"
+              />
+              <br />
+              <span class="error"></span>
+            </div>
+          </div>
+
+          
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Date Of Joining:</label>
+              <input
+                type="date"
+                class="phone-input"
+                name="date"
+                style="width: 70%"
+                
+              />
+              <br />
+              <span class="error"></span>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Gender</label>
+              <input
+                type="text"
+                class="Email-input"
+                style="width: 70%"
+                placeholder="Enter Gender"
+                name="Gender"
+              />
+              <br />
+              <span class="error"></span>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Status:</label>
+              <input
+                type="text"
+                class="phone-input"
+                name="status"
+                style="width: 70%"
+                placeholder="Active/Inactive"
+                
+              />
+              <br />
+              <span class="error"></span>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Salary:</label>
+              <input
+                type="number"
+                class="Email-input"
+                style="width: 70%"
+                placeholder="Enter Salary ($)"
+                name="salary"
+              />
+              <br />
+              <span class="error"></span>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary w-30 my-3 submit-button">
+            Submit
+          </button>
+        </div>
+        <hr>
+        
+        <!--Employee Table-->
+        <div class="education">
+          <div class="table-responsive">
+            <h6 class="mb-3" style="color: #1c0356">
+              Employee Information:
+            </h6>
+            <table class="table table-bordered table-responsive">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>email</th>
+                  <th>Number</th>
+                  <th>DOJ</th>
+                  <th>Gender</th>
+                  <th>Status</th>
+                  <th>Salary ($)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="study">
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+                    
+                  </td>
+                  <td>
+
+                  </td>
+                  <td>
+
+                  </td>
+                  <td>
+
+                  </td>
+                  <td>
+
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <hr />
+        
+        
+        </div>
+      </div>
+    </form>
+
+    
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+  </body>
+</html>
