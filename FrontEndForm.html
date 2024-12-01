@@ -11,7 +11,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
 
         * {
             font-family: Montserrat !important;
@@ -101,10 +101,28 @@
                                 <div class="col-6">
                                     <div class="row g-3 align-items-center">
                                         <div class="col-3">
+                                            <label for="status" class="col-form-label">Status</label>
+                                        </div>
+                                        <div class="col-6 flex-grow-1">
+                                            <select class="form-select" name="status" id="status"
+                                                aria-label="Default select example">
+                                                <option value="" selected>Choose...</option>
+                                                <option value="Active">Active</option>
+                                                <option value="Inactive">Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-6">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-3">
                                             <label for="sal" class="col-form-label">Salary</label>
                                         </div>
                                         <div class="col-6 flex-grow-1">
-                                            <input required type="number" name="salary" id="sal" class="form-control" placeholder="Enter Salary...">
+                                            <input required type="number" name="salary" id="sal" class="form-control"
+                                                placeholder="Enter Salary...">
                                         </div>
                                     </div>
                                 </div>
@@ -148,12 +166,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
     <script>
         const SERVER_URL = "http://localhost:8080/employees";
 
@@ -161,7 +173,7 @@
         const POST_EMPLOYEES = SERVER_URL;
 
         const form = document.querySelector("form");
-        const [id, name, email, phone, date, gender, salary] = form.elements;
+        const [id, name, email, phone, date, gender, salary, status] = form.elements;
 
         async function editRow(editId) {
             const res = await fetch(`${GET_EMPLOYEES}/${editId}`);
@@ -174,6 +186,7 @@
             date.value = employee.dateOfJoining;
             gender.value = employee.gender;
             salary.value = employee.salary;
+            status.value = employee.status || ""; // Default to empty if null
         }
 
         async function deleteRow(deleteId) {
@@ -195,7 +208,7 @@
                         <td>${row.email}</td>
                         <td>${row.phoneNumber}</td>
                         <td>${row.gender}</td>
-                        <td>${row.status}</td>
+                        <td>${row.status || "Not Set"}</td>
                         <td>${row.dateOfJoining}</td>
                         <td>${row.salary}</td>
                         <td>
@@ -207,17 +220,9 @@
             }
         }
 
-        prefetchTableRows();
-
-
-        async function fetchEmployees() {
-            const res = await fetch(GET_EMPLOYEES);
-            const data = await res.json();
-            return data;
-        }
-
         async function createEmployee(formData) {
             const formDataJson = Object.fromEntries(formData.entries());
+            formDataJson.status = formDataJson.status || null; // Default to null if not selected
             console.log(formDataJson);
             const res = await fetch(POST_EMPLOYEES, {
                 method: 'POST',
@@ -225,53 +230,48 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formDataJson)
-            })
+            });
             const data = await res.json();
             prefetchTableRows(data);
         }
 
         async function updateEmployee(formData) {
             const formDataJson = Object.fromEntries(formData.entries());
+            formDataJson.status = formDataJson.status || null; // Default to null if not selected
             const res = await fetch(POST_EMPLOYEES, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formDataJson)
-            })
+            });
             const data = await res.json();
             prefetchTableRows(data);
         }
 
+        async function fetchEmployees() {
+            const res = await fetch(GET_EMPLOYEES);
+            return res.json();
+        }
+
         async function deleteEmployee(id) {
-            const res = await fetch(`${POST_EMPLOYEES}/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            const data = await res.json();
-            prefetchTableRows(data);
+            const res = await fetch(`${POST_EMPLOYEES}/${id}`, { method: 'DELETE' });
+            return res.json();
         }
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-
-            if (form.checkValidity()) {
-                const formData = new FormData(form);
-                if (Number.parseInt(id.value) > 0) {
-                    updateEmployee(formData);
-                } else {
-                    createEmployee(formData);
-                }
-                fetchEmployees();
-                form.reset();
-                form.classList.remove('was-validated')
+            const formData = new FormData(form);
+            if (id.value == "0") {
+                await createEmployee(formData);
             } else {
-                form.classList.add('was-validated')
+                await updateEmployee(formData);
             }
+            form.reset();
+            id.value = "0";
+        });
 
-        })
+        prefetchTableRows();
     </script>
 </body>
 
